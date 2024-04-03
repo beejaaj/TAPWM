@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Pedra, Papel e Tesoura</title>
+</head>
+<body>
+    <script>
+        var resultado;
+        user_decision = parseInt(prompt("Escolha entre papel [1], pedra [2] ou tesoura [3]."));
+        switch(user_decision){
+            case 1:
+            //alert(`O usuário escolheu ${user_decision}`);
+            alert("O usuário escolheu papel.");
+            break;
+            case 2:
+            alert("O usuário escolheu pedra.");
+            break;
+            case 3:
+            alert("O usuário escolheu tesoura.");
+            break;
+        }
+        var cpu_decision = Math.floor(Math.random() * (3-1+1)) + 1
+        //alert(`O computador escolheu ${cpu_decision}`);
+        switch(cpu_decision){
+            case 1:
+            alert("O computador escolheu papel.");
+            break;
+            case 2:
+            alert("O computador escolheu pedra.");
+            break;
+            case 3:
+            alert("O computador escolheu tesoura.");
+            break;
+        }
+
+/*USER x CPU
+papel = 1 ; pedra = 2 ; tesoura = 3:
+
+2 x 1 = CPU wins
+1 x 2 = USER wins
+
+1 x 3 = CPU wins
+3 x 1 = USER wins
+
+3 x 2 = CPU wins
+2 x 3 = USER wins
+*/
+        switch(true){
+            case user_decision == 1 && cpu_decision == 1 || user_decision == 2 && cpu_decision == 2 || user_decision == 3 && cpu_decision == 3:
+                resultado = "Empate.";
+            break;
+            case user_decision == 2 && cpu_decision == 1:
+                resultado = "CPU wins";
+            break;
+            case user_decision == 1 && cpu_decision == 2:
+                resultado = "USER wins";
+            break;
+            case user_decision == 1 && cpu_decision == 3:
+                resultado = "CPU wins";
+            break;
+            case user_decision == 3 && cpu_decision == 1:
+                resultado = "USER wins";
+            break;
+            case user_decision == 3 && cpu_decision == 2:
+                resultado = "CPU wins";
+            break;
+            case user_decision == 2 && cpu_decision == 3:
+                resultado = "USER wins";
+            break;
+        }
+        final = confirm(resultado)
+        if (final){
+        alert("Recarregue a página para mais uma rodada.");
+        }else{ alert("Desistiu?");}
+
+        //Idealmente iriamos implementar o recarregamento automático de página.
+    </script>
+</body>
+</html>
