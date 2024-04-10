@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Operadores Especiais</title>
+</head>
+<body>
+    <script>
+        //Ternário
+        const age = 20;
+        const allowed = (age >= 16) ? "Permitido votar" : "Não permitido votar";
+        alert(allowed);
+
+        //Operador vírgula
+        function x(){
+            return 'A';
+        }
+        function y(){
+            return 'B';
+        }
+        function z(){
+            return 'C';
+        }
+        var x = (x(), y(), z());
+        alert(x);
+        var s = "";
+        for(var i = 0, j = 9; i <= 9; i++, j--){
+            s += ("[" + i + "]"+"[" + j + "]" + "\n");
+        }
+        alert(s);
+
+        // Delete
+        const obj = { nome: "João",
+            endereco: "Av. Carlos Reinaldo Mendes",
+            idade: 30
+        };
+        alert(obj); // [object Object]
+        alert(obj.nome, obj.endereco, obj.idade); // João
+        alert(JSON.stringify(obj)); // Literalmente a digitação em código do objeto
+        console.log(obj); // Imprime no console, para o desenvolvedor, Objeto
+        
+        delete obj.endereco;
+        alert(JSON.stringify(obj));
+        console.log(obj);
+        print(obj); // "print" Na verdade é mandar o browser imprimir a página.
+        // Esse comando de impressão ocorre somente no final do código
+
+        //Operador In
+        const fruits = ['apple', 'banana', 'orange'];
+        alert(1 in fruits); // true
+        alert("length" in fruits); // true
+        //"in" significa "Existe determinada propriedade, elemento?"
+        const indexBanana = fruits.indexOf("banana");
+        alert(indexBanana); // 1 (segundo item)
+        const existBanana = fruits.includes("banana");
+        alert(existBanana); // true (sim existe banana)
+
+        //New
+        function Person(_name){
+            this.name = _name;
+        }
+        const john = new Person('John');
+        alert(john.name); // John
+
+        var objP = new Object();
+        objP.nomepessoa='Pedro';
+        alert(objP.nomepessoa); // Pedro
+
+        //instanceof
+        alert(john instanceof Person); // true
+
+        //this
+        function myFunc(){
+            alert(this);
+        }
+        myFunc(); //[object Window]
+
+        var objit = {
+            teste: function (){
+                return(this);
+            }
+        }
+        alert(objit.teste()); // [object Object]
+
+        //objetos-Função não conseguem oferecer polimorfismo
+        const defaultValue = "Default Value";
+        const userInput = null;
+        const finalValue = userInput ?? defaultValue;
+        alert(finalValue); // Default Value
+        const name = "Mary";
+        alert(name??"Name is null");
+    </script>
+</body>
+</html>

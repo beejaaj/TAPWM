@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Pesquisa sobre o Filme</title>
+</head>
+<body>
+    <script>
+        var enquete = new Array();
+        for(var i=1; i<=45; i++){
+            alert(enquete.length);
+            age = parseInt(prompt("Quantos anos você tem?"));
+            gender = parseInt(prompt("A que gênero você se identifica?\n\nConsidere:\n0 - Feminino\n1 - Masculino"));
+            rating = parseInt(prompt("Qual a sua opinião sobre o filme?\nConsidere:\n4 = Ótimo\n3 = Bom\n2 = Regular\n1 = Péssimo\n"));
+            const inscrito = {
+                idade: age,
+                sexo: gender,
+                opiniao: rating
+            };
+            enquete.push(inscrito);
+        }
+        function media(){
+            //media da idade das 45 pessoas
+        }
+        function maisvelho(){
+            //idade da pessoa mais velha
+        }
+        function maisnovo(){
+            //idade da pessoa mais nova
+        }
+        function haters(){
+            //quantidade de pessoas que responderam 1 (péssimo)
+        }
+        function fans(){
+            //porcentagem de pessoas que responderam 4 ou 3 (ótimo/bom)
+        }
+        function genderanalysis(){
+            //número de mulheres e homens
+        }
+        //alert(JSON.stringify(enquete));
+
+        // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+        // https://stackoverflow.com/questions/5667888/counting-the-occurrences-frequency-of-array-elements
+        // https://www.w3schools.com/js/js_array_search.asp
+
+        // Outra possibilidade: Invés de funções, fazer já dentro do for, atualizando variáveis.
+    </script>
+</body>
+</html>
