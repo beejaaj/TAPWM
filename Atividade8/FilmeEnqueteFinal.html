@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Enquete acerca do Filme</title>
+    </head>
+    <body>
+        <script>
+            var enquete = new Array();
+                maisnovo = 100;
+                maisvelho = 0;
+                media = 0;
+                i=0;
+                fans=0;
+                haters=0;
+            for(i; i<8; i++){
+                alert(enquete.length + 1);
+                age = parseInt(prompt("Quantos anos você tem?"));
+                gender = parseInt(prompt("A que gênero você se identifica?\n\nConsidere:\n0 - Feminino\n1 - Masculino"));
+                rating = parseInt(prompt("Qual a sua opinião sobre o filme?\nConsidere:\n\n4 = Ótimo\n3 = Bom\n2 = Regular\n1 = Péssimo"));
+                const inscrito = {
+                    idade: age,
+                    sexo: gender,
+                    opiniao: rating
+                };
+                enquete.push(inscrito);
+                //média, entrevistados mais velho e mais novo
+                if(age>maisvelho){maisvelho = age};
+                if(age<maisnovo){maisnovo = age};
+                media+=age;
+                /*quantidade de pessoas que responderam 1 (péssimo)
+                & porcentagem dos que responderam 4 ou 3 (ótimo/bom)*/
+                if(rating===1){haters++}else if(rating===4 || rating===3){fans++};
+            }
+            media/=i;
+            fans = (fans/i)*100;
+            if(maisvelho != maisnovo){alert("A média da idade das pessoas entrevistadas é " + media + ".\nA pessoa mais velha entre as entrevistadas tem " + maisvelho + " anos.\nE a mais nova, consequentemente, tem " + maisnovo + ".")}
+            else{alert("A média da idade das pessoas entrevistadas é " + media + ".\nQuanto às diferenças de idade e quem é o mais novo ou o mais velho.. Em nossa pesquisa todos possuem a mesma idade.")};
+            alert("A quantidade de pessoas que plenamente odiaram o filme é " + haters + ";\nEnquanto a porcentagem de pessoas que acharam o filme bom ou ótimo é " + fans + "%.");
+            function genderanalysis(){
+                //número de mulheres e homens
+                let f=0; let m=0; for(const inscritos of enquete){
+                    if (inscritos.sexo === 0){f++}else if(inscritos.sexo ===1){m++};
+                }
+                return "O número de pessoas que se identificam como mulheres é " + f + ";\nE o número de pessoas que se identificaram como homens é " + m + ".";
+            }
+            if(confirm(genderanalysis())){alert(JSON.stringify(enquete))};
+            // https://www.freecodecamp.org/portuguese/news/como-contar-objetos-em-um-array/
+        </script>
+    </body>
+</html>
