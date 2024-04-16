@@ -50,22 +50,10 @@ papel = 1 ; pedra = 2 ; tesoura = 3:
             case user_decision == 1 && cpu_decision == 1 || user_decision == 2 && cpu_decision == 2 || user_decision == 3 && cpu_decision == 3:
                 resultado = "Empate.";
             break;
-            case user_decision == 2 && cpu_decision == 1:
+            case user_decision == 2 && cpu_decision == 1 || user_decision == 1 && cpu_decision == 3 || user_decision == 3 && cpu_decision == 2:
                 resultado = "CPU wins";
             break;
-            case user_decision == 1 && cpu_decision == 2:
-                resultado = "USER wins";
-            break;
-            case user_decision == 1 && cpu_decision == 3:
-                resultado = "CPU wins";
-            break;
-            case user_decision == 3 && cpu_decision == 1:
-                resultado = "USER wins";
-            break;
-            case user_decision == 3 && cpu_decision == 2:
-                resultado = "CPU wins";
-            break;
-            case user_decision == 2 && cpu_decision == 3:
+            case user_decision == 1 && cpu_decision == 2 || user_decision == 3 && cpu_decision == 1 || user_decision == 2 && cpu_decision == 3:
                 resultado = "USER wins";
             break;
         }
