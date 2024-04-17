@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cálculo IMC</title>
+</head>
+<body>
+    <script>
+        if(confirm("Quer calcular seu IMC?")){
+        peso = parseInt(prompt("Qual o seu peso? (kg)"))
+        altura = parseFloat(prompt("Qual sua altura? (metros)"))
+        imc = peso / (altura**2)
+        switch(true){
+            case imc < 18.5:
+                alert(`IMC - ${Math.floor(imc)}\nClassificação: Magreza\nObesidade (Grau): 0`)
+            break;
+            case 18.5 < imc < 24.9:
+                alert(`IMC - ${Math.floor(imc)}\nClassificação: Regular\nObesidade (Grau): 0`)
+            break;
+            case 25 < imc < 29.9:
+                alert(`IMC - ${Math.floor(imc)}\nClassificação: Sobrepeso\nObesidade (Grau): 1`)
+            break;
+            case 30 < imc < 39.9:
+                alert(`IMC - ${Math.floor(imc)}\nClassificação: Obesidade\nObesidade (Grau): 2`)
+            break;
+            case imc > 40:
+                alert(`IMC - ${Math.floor(imc)}\nClassificação: Obesidade Grave\nObesidade (Grau): 3`)
+            break;
+        }}
+        // end of script
+    </script>
+</body>
+</html>

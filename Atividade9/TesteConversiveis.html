@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Teste de Conversão de Variáveis</title>
+</head>
+<body>
+    <script>
+        /*Como o computador faz o operador "=="?
+        primeiro o computador faz ===
+        verificando que retorna falso,
+        verifica se é possivel converter uma variavel no tipo da outra, e vice-versa,
+        e verifica se em ambos casos de conversão, o valor de variavel seja idêntico
+        retornando verdadeiro caso sim falso caso não, pela operação ==*/
+
+        var num1 = Number(" ")
+        var num2 = Number("Boa Noite!");
+        var num3 = Number("")
+        var num4 = Number("000011")
+        var num5 = Number(true)
+        var num6 = Number("1.125")
+        var num7 = Number(undefined)
+        var num8 = Number("0b1010");
+        var num9 = Number(" 123A")
+        alert(`num1:${num1} num2:${num2} num3:${num3}\nnum4:${num4} num5:${num5} num6:${num6}\nnum7:${num7} num8:${num8} num9:${num9}`)
+
+        //x
+        var num10 = parseInt("      000000000000      99")
+        var num20 = parseInt("      42         00")
+        var num30 = parseInt("1234 qualquercoisa")
+        var num40 = parseInt("")
+        var num50 = parseInt("0xA")
+        var num60 = parseInt("546.5")
+        var num70 = parseInt("70")
+        var num80 = parseInt("0xf")
+        var num90 = parseInt("-50")
+        var num00 = parseInt(" 1 6 0")
+        alert(`num10:${num10} num20:${num20} num30:${num30}\nnum40:${num40} num50:${num50} num60:${num60}\nnum70:${num70} num80:${num80} num90:${num90}\n\nnum00:${num00}`);
+
+        var num100 = parseFloat("22.578").toPrecision(2)
+        var num200 = parseFloat("22.578").toPrecision(3)
+        var num300 = parseFloat("0000278")
+        var num400 = parseFloat("0908.5")
+        var num500 = parseFloat("1234 qualquercoisa")
+        var num600 = parseFloat("22.34.5")
+        var num700 = parseFloat("0xAF")
+        var num800 = parseFloat("0b10101011011101")
+        var num900 = parseFloat("-50")
+        var num000 = parseFloat(" 1 6 0")
+        alert(`num100:${num100} num200:${num200} num300:${num300}\nnum400:${num400} num500:${num500} num600:${num600}\nnum700:${num700} num800:${num800} num900:${num900}\n\nnum000:${num000}`);
+
+        idade = 18;
+        var idadeAsString = idade.toString()
+        estudante = true
+        estudanteAsString = estudante.toString();
+        alert(`idade:${idadeAsString}, estudante:${estudanteAsString}`/*nada:${undefined.toString}`*/)
+
+        value1 = 10 / 0
+        value2 = true
+        value3 = null
+        var value4;
+        value5 = 22.45
+        value0 = 0 / 0
+
+        alert(String(value1));
+        alert(String(value2));
+        alert(String(value3));
+        alert(String(value4));
+        alert(String(value5));
+        alert(String(value0));
+
+        //booleano de numero != 0 => true, else => false
+        //booleano de string != " " => true, else => false
+        const strings = ['a', 'b', 'c'];
+        const upperCaseStrings = strings.map(str => str.toUpperCase());
+        console.log(upperCaseStrings)
+        const a = ["",{},{nome: "Zé"},0.5, null, undefined, 'string'];
+        console.log(a.map(Boolean));
+
+        var num8 =25;
+        var num9 = eval("num8 + 10"); alert(num9)
+    </script>
+</body>
+</html>
