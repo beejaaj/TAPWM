@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Calculadora de Triângulo</title>
+    </head>
+    <body>
+        <script>
+            let C; var A = parseFloat(prompt("Digite um número A.")); let B; if(isNaN(A) ? alert("O usuário não digitou um número corretamente"):B = parseFloat(prompt("Digite um número B."))){isNaN(B) ? alert("O usuário não digitou um número corretamente"):C = parseFloat(prompt("Digite um número C."))};
+            if(confirm(`A: ${A}\nB: ${B}\nC: ${C}`)){if(((Math.abs(B - C)) < A && A < (B+C)) && ((Math.abs(A-C)) < B && B < (A+C)) && ((Math.abs(A-B)) < C && C < (A+B))){alert("Os números digitados foram validados. Confirmamos que são números passíveis de serem tratados como os lados de um triângulo."); switch(true){case (A === B === C):alert("O triângulo é equilátero."); break; case (A === B !== C): alert("O triângulo é isósceles."); break; case (A !== B !== C):alert("O triângulo é escaleno."); break;}}else{alert("Os números não são lados de um triângulo.")}}else{alert("Desistiu?")};
+        </script>
+    </body>
+</html>
