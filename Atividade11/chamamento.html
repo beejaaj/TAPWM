@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Function-Set 1</title>
+</head>
+<body>
+    <script>
+        type="module"
+        import { maiornumerof1 } from 'maiornumerof1.mjs';
+        import { maiornumeromath } from 'maiornumeromath.mjs';
+        import { tresnumerosordenados } from 'tresnumerosordenados.mjs';
+
+        result = parseInt(prompt("Função 1, 2 ou 3?"))
+        switch(true){
+            case result == 1:
+                maiornumerof1()
+            break;
+            case result == 2:
+                maiornumeromath()
+            break;
+            case result == 3:
+                tresnumerosordenados()
+            break;
+        }
+    </script>
+</body>
+</html>
