@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Usando eventos no Javascript</title>
+	</head>
+	<body onload="alert('Abra a Janela');">
+		<img src="https://thumbs.dreamstime.com/b/fen%C3%AAtre-dans-la-brique-de-jaune-du-maroc-afrique-historique-58335269.jpg" onclick="mClick(this)" onmouseover="mMove(this)" onmouseout="mOut(this)"/>
+		<!--<div>Abra a Janela</div>-->
+		<script>
+			function mClick(obj) {
+				obj.src="https://4.bp.blogspot.com/-xOShWK3RNqA/U5Tai-PiNAI/AAAAAAAAeCI/UeDFzX9jmJU/s1600/janela-quebrada-de-casa-abandonada-por-giovani-blank.jpg";
+			}
+
+			function mMove(obj) {
+				obj.src="https://thumbs.dreamstime.com/b/open-window-to-sea-view-good-weather-summer-107290182.jpg";
+
+			}
+			
+			function mOut(obj) {
+				obj.src="https://thumbs.dreamstime.com/b/fen%C3%AAtre-dans-la-brique-de-jaune-du-maroc-afrique-historique-58335269.jpg";
+			}
+		</script>
+	</body>
+</html>
